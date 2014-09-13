@@ -85,3 +85,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+# let local_settings.py override these settings.
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
